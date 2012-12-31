@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>LDRAW .dat parser</title>
+	</head>
+	<body>
+		<script src="DATColors.js"></script>
+		<script src="DATParser.js"></script>
+
+		<!-- let's test this -->
+		<script>
+
+			datFile = "2705.dat";    // simple cylinder
+			datFile = "2815.dat";    // torus
+      datFile = "75535.dat";  // peg joiner
+      datFile = "75348.dat";  // shock absorber with spring
+      datFile = "super.dat"; // super test
+			mesh = DATParser.parseFile(datFile);
+
+			var obj = DATParser.toOBJ(mesh);
+			document.body.innerHTML += "<pre># " + datFile + "\n" + obj + "</pre>";
+		</script>
+	</body>
+</html>
